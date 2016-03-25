@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="githubViewer">
+
+  <head>
+    <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+    <script data-require="angular.js@*" data-semver="1.3.0-beta.5" src="https://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
+    <script data-require="jquery@*" data-semver="2.2.0" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script data-require="bootstrap@*" data-semver="3.3.6" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body ng-controller="MainController">
+    
+    <h1 >{{message}}</h1>
+    <div>{{error}}</div>
+    <div>{{countdown}}</div>
+    
+    <form name="seachForUser" ng-submit="search(username)" class="form-default">
+      <div class="form-group">
+        <label for="Name">Name</label>
+      <input type="text" class="form-control" required="" placeholder="username to find" ng-model="username" />
+      </div>
+      <div class="form-group">
+      <input type="submit" value="search" class="btn btn-default btn-success"/>
+      </div>
+    </form>
+    <div ng-show="user" ng-include="'userdetails.html'"></div>
+    
+    
+  </body>
+
+</html>

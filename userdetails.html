@@ -1,0 +1,29 @@
+<div id="userdetails">
+<h1 style="text-align:left">FirstName: {{user.name}}</h1>
+<div style="text-align:left" ><img ng-src="{{user.avatar_url}}"  width="200" height="200" title="{{user.name}}"></div>
+
+<br/> <div style="text-align:left">orderBy:
+<select ng-model="repoSortOrder">
+  <option value="+name" ng-selected="true" >name</option>
+  <option value="-stargazers_count">stars</option>
+  <option value="+language">language</option>
+</select></div>
+<br/>
+<br/>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Stars</th>
+      <th>Language</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="repo in repos| orderBy:repoSortOrder">
+      <td>{{repo.name}}</td>
+      <td>{{repo.stargazers_count}}</td>
+      <td>{{repo.language}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
